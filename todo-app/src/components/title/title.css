@@ -1,0 +1,6 @@
+h1 {
+  margin-top: 10dvh;
+  color: var(--main);
+  font-family: var(--main-font);
+  font-size: 4rem;
+}

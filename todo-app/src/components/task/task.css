@@ -1,0 +1,21 @@
+.task-container {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg);
+  color: var(--text);
+  width: 30dvw;
+
+
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  padding: 1rem;
+}
+
+.task-container > label {
+  font-family: var(--main-font);
+}
+
+.status {
+  margin-left: auto;
+}
