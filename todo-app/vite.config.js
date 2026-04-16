@@ -5,6 +5,9 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vite.dev/config/
 export default defineConfig({
+
+  base: "basic-todo-list",
+
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
