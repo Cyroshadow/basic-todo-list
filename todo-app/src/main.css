@@ -8,13 +8,14 @@
 
 :root {
   --main: hsl(220, 70%, 50%);
-  --secondary: hsl(220, 70%, 50%);
+  --secondary: hsl(220, 70%, 30%);
   --bg-dark: hsl(0, 0%, 0%);
   --bg: hsl(0, 0%, 5%);
   --bg-light: hsl(0, 0%, 10%);
   --border: hsl(0, 0%, 15%);
   --main-font: "Jost";
   --text: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 75%);
 }
 
 body {
@@ -26,4 +27,5 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.75rem;
 }

@@ -1,18 +1,13 @@
-import './task.css'
-import Icon from '../icon/icon.jsx'
+import './Task.css'
+import Icon from '../Icon/Icon.jsx'
 import { useState } from 'react'
 
 export default function Task({ children }) {
 
-  const [taskCompleted, setTaskCompleted] = useState(true);
+  const [taskCompleted, setTaskCompleted] = useState(false);
 
   function updateTask() {
-    console.log("i was pressed");
     setTaskCompleted(taskCompleted => !taskCompleted);
-  }
-
-  if (taskCompleted) {
-    
   }
 
   let component =

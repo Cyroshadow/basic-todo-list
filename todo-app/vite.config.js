@@ -10,4 +10,8 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     svgr(),
   ],
+
+  server: {
+    host: true,
+  }
 })
