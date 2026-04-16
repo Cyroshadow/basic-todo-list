@@ -3,7 +3,7 @@
   border-radius: 8px;
   background-color: var(--bg-light);
   color: var(--text);
-  width: 100%;
+  width: max(30dvw, 40dvh);
 
 
   display: flex;

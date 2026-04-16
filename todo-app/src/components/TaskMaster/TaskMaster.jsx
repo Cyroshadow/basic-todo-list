@@ -1,28 +1,49 @@
 import './TaskMaster.css'
 import Task from '../Task/Task.jsx'
 import Icon from '../Icon/Icon'
+import { useState, useEffect } from 'react'
 
 function TaskMaster() {
 
-  let taskList = ["Do the dishes", "Take out the trash", "Explode"]
+  const [taskList, setTaskList] = useState(() => {
+    const saved = localStorage.getItem("userTasks");
+    return saved ? JSON.parse(saved) : []
+  });
 
-  function AddTask({ taskName }) {
-    taskList.push(taskName);
+  useEffect(() => {
+    localStorage.setItem("userTasks", JSON.stringify(taskList));
+  }, [taskList]);
+
+  const [task, setTask] = useState("");
+
+  function addTask() {
+    if (!task.trim()) {
+      return;
+    }
+    setTaskList([...taskList, { id: Date.now(), text: task, completed: false }]);
+    setTask("");
+  }
+  
+  function deleteTask(id) {
+    setTaskList(taskList.filter(task => task.id !== id));
   }
 
-  let ToDo =
+  return (
     <>
-      <div className='ToDo'>
-        {
-          taskList.map((task, index) => (
-            <Task taskId={index}>{task}</Task>
-          ))
-        }
+      <div id="taskCreator">
+        <input type="text" placeholder="Do the dishes..." className="AddTask" value={task}
+          onChange={(e) => setTask(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && addTask()}
+        />
+        <button id="AddTask" onClick={addTask}><Icon className="CreateTask"></Icon></button>
       </div>
-      <button className='Add' onClick="AddTask()">Create new task<Icon className="AddTask" /></button>
+      {taskList.length > 0 && (
+        taskList.map((task) => (
+          <Task key={task.id} completed={task.completed} onComplete={() => deleteTask(task.id)}>{task.text}</Task>
+        ))
+      )}
     </>
-
-  return ToDo
+  )
 }
 
 export default TaskMaster

@@ -7,8 +7,8 @@
 }
 
 :root {
-  --main: hsl(220, 70%, 50%);
-  --secondary: hsl(220, 70%, 30%);
+  --main: hsl(220, 60%, 50%);
+  --secondary: hsl(220, 60%, 30%);
   --bg-dark: hsl(0, 0%, 0%);
   --bg: hsl(0, 0%, 5%);
   --bg-light: hsl(0, 0%, 10%);

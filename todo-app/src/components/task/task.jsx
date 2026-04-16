@@ -2,13 +2,17 @@ import './Task.css'
 import Icon from '../Icon/Icon.jsx'
 import { useState } from 'react'
 
-export default function Task({ children }) {
+export default function Task({ children, completed, onComplete}) {
 
-  const [taskCompleted, setTaskCompleted] = useState(false);
+  const [taskCompleted, setTaskCompleted] = useState(completed);
 
   function updateTask() {
-    setTaskCompleted(taskCompleted => !taskCompleted);
+    if (taskCompleted) {
+      onComplete();
+    }
+    setTaskCompleted(true);
   }
+
 
   let component =
     <div className="task-container">
