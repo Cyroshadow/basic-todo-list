@@ -16,6 +16,10 @@
   font-family: var(--main-font);
 }
 
-.status {
+.taskState {
   margin-left: auto;
+}
+
+.completedTask {
+  text-decoration: line-through;
 }
