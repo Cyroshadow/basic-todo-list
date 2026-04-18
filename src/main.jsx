@@ -6,7 +6,7 @@ import TaskMaster from './components/TaskMaster/TaskMaster.jsx'
 
 createRoot(document.getElementById('root')).render(
   <>
-    <Title>hi hello</Title>
+    <Title />
     <TaskMaster />
   </>
 )

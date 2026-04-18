@@ -23,10 +23,15 @@ function TaskMaster() {
     setTaskList([...taskList, { id: Date.now(), text: task, completed: false }]);
     setTask("");
   }
-  
+
   function deleteTask(id) {
     setTaskList(taskList.filter(task => task.id !== id));
   }
+
+  function toggleTask(id) {
+    task.id === id ? { ...task, completed: !task.completed } : task
+  }
+
 
   return (
     <>
@@ -39,7 +44,10 @@ function TaskMaster() {
       </div>
       {taskList.length > 0 && (
         taskList.map((task) => (
-          <Task key={task.id} completed={task.completed} onComplete={() => deleteTask(task.id)}>{task.text}</Task>
+          <Task key={task.id} completed={task.completed}
+            onComplete={() => deleteTask(task.id)}
+            onToggle={() => toggleTask(task.id)}>{task.text}
+          </Task>
         ))
       )}
     </>
