@@ -1,6 +1,6 @@
 import './TaskMaster.css'
 import Task from '../Task/Task.jsx'
-import Icon from '../Icon/Icon'
+import Icon from '../Icon/Icon.jsx'
 import { useState, useEffect } from 'react'
 
 function TaskMaster() {
